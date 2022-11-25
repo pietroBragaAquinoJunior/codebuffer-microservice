@@ -1,6 +1,8 @@
 server:
   port: 9001
 spring:
+  application:
+    name: department-service
   h2:
     console:
       enabled: true
@@ -13,3 +15,9 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
